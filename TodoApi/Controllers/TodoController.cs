@@ -72,9 +72,9 @@ namespace TodoApi.Controllers
                 return Created($"v1/todos/{todo.Id}", todo);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest($"erro: {ex.Message}");
             }
 
         }
